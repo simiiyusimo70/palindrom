@@ -3,12 +3,10 @@
 #include <algorithm>
 
 bool isPalindrome(const std::string& str) {
-    // Create a copy of the string and transform it to lowercase
     std::string cleanedStr = str;
     cleanedStr.erase(remove_if(cleanedStr.begin(), cleanedStr.end(), ::isspace), cleanedStr.end());
     std::transform(cleanedStr.begin(), cleanedStr.end(), cleanedStr.begin(), ::tolower);
     
-    // Check if the cleaned string is equal to its reverse
     std::string reversedStr = cleanedStr;
     std::reverse(reversedStr.begin(), reversedStr.end());
     
